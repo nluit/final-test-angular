@@ -1,0 +1,60 @@
+.color-red {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
+
+.color-black {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+}
+
+.color-blue {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+}
+
+.color-red:hover {
+    border: 4px solid yellow;
+    cursor: pointer;
+}
+
+.color-black:hover {
+    border: 4px solid yellow;
+    cursor: pointer;
+}
+
+.color-blue:hover {
+    border: 4px solid yellow;
+    cursor: pointer;
+}
+
+li {
+    display: inline-block;
+    list-style: none;
+}
+
+.product-name {
+    font-size: 40px;
+}
+
+.product-name:hover {
+    color: rgb(238, 153, 8);
+}
+
+.product-price {
+    font-style: italic;
+    font-size: 25px;
+}
+
+.image {
+    cursor: zoom-in !important;
+}
+
+
+/*  */
+
+
+/*  */

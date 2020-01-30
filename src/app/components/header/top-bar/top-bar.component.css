@@ -1,0 +1,29 @@
+.form-control::-moz-placeholder {
+    color: rgb(40, 52, 66)
+}
+
+.form-control:-ms-input-placeholder {
+    color: rgb(40, 52, 66)
+}
+
+
+/* .form-control::-webkit-input-placeholder {
+    color: white;
+} */
+
+.form-inline {
+    width: 800px;
+}
+
+.form-control {
+    width: 400px;
+}
+
+
+/* .btn:hover {
+    background-color: transparent;
+} */
+
+.navbar {
+    background-color: rgb(40, 52, 66)
+}

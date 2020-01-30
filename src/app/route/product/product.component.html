@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="card-header mt-5 bg-white border-white">
+        <span>SHOP</span>
+        <div class="float-right ml-n5">
+            <i class="fa fa-table" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="row mt-n5">
+        <div class="col-md-3 col-sm-6 col-xs-12 mt-4" *ngFor="let product of products index as i">
+            <div class="card-body  product-item">
+                <div class="card product-thumb">
+                    <!-- <div class="rounded-circle bg-warning img text-center float-left mt-4 ml-2">
+                        <span> 13 %</span>
+                    </div> -->
+                    <div class="img-hover-zoom--zoom-n-rotate py-5">
+                        <a routerLink="/product/{{product.product_id}}">
+                            <img class="card-img-top" [src]=product.img width="180" height="180" alt="">
+                        </a>
+                    </div>
+                    <div class="card-footer product-info">
+                        <div class="add-to-cart text-center bg-warning ">
+                            <button class="btn text-white"><i class="fa fa-shopping-basket text-white" aria-hidden="true"></i> Add to cart</button>
+                        </div>
+                        <div class=""><a routerLink="/product/{{product.product_id}}" class="product-name">{{product.product_name |uppercase}}</a> </div>
+                        <div class="product-price">
+                            <span class="price"> {{product.product_price | currency}}</span> <span class="sale ml-3">1000</span>
+                        </div>
+                        <div class="star text-warning ">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <span class="text-dark">
+                                (6S)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <nav aria-label="Page navigation example  bg-white my-5">
+
+        <ul class="pagination justify-content-end ">
+            <label for="" class="pt-2">Show</label><select name="" class="mx-3" id="">
+                <option value="">12</option>
+                <option value="">9</option>
+            </select>
+            <li class="page-item">
+                <a class="page-link border-white" href="#" tabindex="-1">&lsaquo;&lsaquo;</a>
+            </li>
+            <li class="page-item active"><a class="page-link border-white" href="#">1</a></li>
+            <li class="page-item"><a class="page-link border-white" href="#">2</a></li>
+            <li class="page-item"><a class="page-link border-white" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link border-white" href="#">&rsaquo;&rsaquo;</a>
+            </li>
+        </ul>
+    </nav>
+</div>

@@ -13,6 +13,16 @@ export class ProductDetailComponent implements OnInit {
   constructor(  public activatedRoute : ActivatedRoute ) { 
 
   }
+  public qty=0;
+  plus(){
+    this.qty= this.qty+1;
+  }
+  minus(){
+    if(this.qty==0) this.qty=0
+    else  this.qty= this.qty - 1;
+    
+  }
+
   ngOnInit() {
     this.activatedRoute.params.subscribe(id => {
       for(var i=0 ; i< this.products.length; i++){

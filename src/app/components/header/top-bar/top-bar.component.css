@@ -27,3 +27,11 @@
 .navbar {
     background-color: rgb(40, 52, 66)
 }
+
+.dropdown-item:hover {
+    background-color: rgb(238, 153, 8);
+}
+
+.dropdown-menu {
+    margin: 0.4rem -3rem 0;
+}

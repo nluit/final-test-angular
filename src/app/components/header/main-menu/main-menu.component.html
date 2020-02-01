@@ -1,9 +1,9 @@
 <div class="container-fluid border  border-left-0 border-top-0 border-right-0 ">
     <ul class="nav ">
         <li class="nav-item menu">
-            <a class="nav-link active text-white">CATEGORY              
+            <a class="nav-link active text-white">{{ 'CATEGORY' | translate }}               
 
-                <button class="btn text-white ml-5 float-right fa fa-bars" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <button class="shadow-none btn text-white ml-5 float-right fa fa-bars" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 </button>
                 <div class="collapse" id="collapseExample">
                     <div class="bg-light p-5" id="_navigation">
@@ -53,18 +53,18 @@
 
 </li>
 <li class="nav-item px-2" routerLinkActive="active text-white">
-    <a class="nav-link" routerLink="/home">Home</a>
+    <a class="nav-link" routerLink="/home">{{ 'Home' | translate }}</a>
 </li>
 <li class="nav-item px-2" routerLinkActive="active text-white">
-    <a class="nav-link" routerLink="/product">Product</a>
-</li>
-
-<li class="nav-item px-2" routerLinkActive="active text-white">
-    <a class="nav-link" routerLink="/contact">Contact</a>
+    <a class="nav-link" routerLink="/product">{{ 'Product' | translate }}</a>
 </li>
 
 <li class="nav-item px-2" routerLinkActive="active text-white">
-    <a class="nav-link" routerLink="login">Login</a>
+    <a class="nav-link" routerLink="/contact"> {{ 'Contact' | translate }}</a>
+</li>
+
+<li class="nav-item px-2" routerLinkActive="active text-white">
+    <a class="nav-link" routerLink="login">{{ 'Login' | translate }} </a>
 </li>
 </ul>
 </div>

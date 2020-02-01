@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule , Routes} from '@angular/router'
 import { NgxImageZoomModule } from 'ngx-image-zoom';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +23,10 @@ import { ProductComponent } from './route/product/product.component';
 import {appRoutes} from './app.routes';
 import { ProductDetailComponent } from './route/product-detail/product-detail.component';
 import { RegisterComponent } from './route/register/register.component';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -42,8 +49,16 @@ import { RegisterComponent } from './route/register/register.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    NgxImageZoomModule.forRoot()
-
+    NgxImageZoomModule.forRoot(),
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

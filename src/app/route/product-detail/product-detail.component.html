@@ -40,11 +40,11 @@
                                         <div class="col-4 ">
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend ">
-                                                    <button class="input-group-text " id="basic-addon1 ">-</button>
+                                                    <button class="input-group-text " id="basic-addon1" (click)="minus()">-</button>
                                                 </div>
-                                                <input type="text " class="form-control text-center " value=1>
+                                                <input type="text " class="form-control text-center " value={{this.qty}}>
                                                 <div class="input-group-prepend ">
-                                                    <button class="input-group-text " id="basic-addon1 ">+</button>
+                                                    <button class="input-group-text " id="basic-addon1 " (click)="plus()">+</button>
                                                 </div>
                                             </div>
                                         </div>

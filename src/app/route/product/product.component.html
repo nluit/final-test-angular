@@ -1,14 +1,19 @@
 <div class="container">
     <div class="card-header mt-5 bg-white border-white">
         <span>SHOP</span>
+        <label for="" class="pt-2">Show</label>
+        <select name="" class="mx-3 text-center" id="">
+            <option value="">12</option>
+            <option value="">9</option>
+         </select>
         <div class="float-right ml-n5">
             <i class="fa fa-table" aria-hidden="true"></i>
         </div>
     </div>
     <div class="row mt-n5">
         <div class="col-md-3 col-sm-6 col-xs-12 mt-4" *ngFor="let product of products index as i">
-            <div class="card-body  product-item">
-                <div class="card product-thumb">
+            <div class="card-body  product-item boder-white">
+                <div class="card product-thumb border border-white">
                     <!-- <div class="rounded-circle bg-warning img text-center float-left mt-4 ml-2">
                         <span> 13 %</span>
                     </div> -->

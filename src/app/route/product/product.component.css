@@ -65,6 +65,8 @@ input[type=range]::-webkit-slider-runnable-track {
 .product-thumb {
     position: relative;
     animation-delay: 1s;
+    object-fit: cover;
+    object-position: center;
 }
 
 .product-thumb:hover>.img {

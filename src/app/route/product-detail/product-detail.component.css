@@ -51,6 +51,17 @@ li {
 
 .image {
     cursor: zoom-in !important;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product-desc {
+    height: 300px;
+}
+
+.product-title {
+    font-size: medium;
+    font-weight: bold;
 }
 
 

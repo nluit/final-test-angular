@@ -42,8 +42,9 @@
     color: #ffff;
 }
 
-.img:hover {
-    border: 1px solid black;
+.image {
+    object-fit: cover;
+    object-position: center;
 }
 
 .time_circles {

@@ -5,59 +5,70 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6  ">
-
                             <div class="card border-white text-center image my-3 ">
-                                <ngx-image-zoom [enableScrollZoom]="true" thumbImage={{result.img}} [magnification]="2">
+                                <ngx-image-zoom [isInsideStaticContainer]='false' [enableScrollZoom]="true" thumbImage={{result.img}} [magnification]="2">
                                 </ngx-image-zoom>
                             </div>
+                            <div class="d-flex justify-content-start img-list w-100 mb-5 border py-3">
+                                <img width="80" height="80" class="img-item" src="https://shopdunk.com/wp-content/uploads/2017/01/anh-iPhone-6-plus-mau-xam.png" alt="">
+                                <img width="80" height="80" class="img-item" src="https://shopdunk.com/wp-content/uploads/2016/11/iphone-6-den-2.png" alt="">
+                            </div>
+
                         </div>
                         <div class="col-md-6 ">
                             <div class="card border-white my-3">
-                                <div class="card-body ">
+                                <div class="card-body">
                                     <div class="product-name ">
                                         {{result.product_name |uppercase}}
                                     </div>
-                                    <div class="product-rate text-warning my-3 ">
-                                        <i class="fa fa-star " aria-hidden="true "></i>
-                                        <i class="fa fa-star " aria-hidden="true "></i>
-                                        <i class="fa fa-star " aria-hidden="true "></i>
-                                        <i class="fa fa-star " aria-hidden="true "></i>
-                                        <i class="fa fa-star " aria-hidden="true "></i> | 0 Order
+
+                                    <div class="product-rate  my-3 ">
+                                        <i class="fa fa-star text-warning" aria-hidden="true "></i>
+                                        <i class="fa fa-star text-warning" aria-hidden="true "></i>
+                                        <i class="fa fa-star text-warning" aria-hidden="true "></i>
+                                        <i class="fa fa-star text-warning" aria-hidden="true "></i>
+                                        <i class="fa fa-star text-warning" aria-hidden="true "></i>
+                                        <span> | 0 Order </span>
+                                        <span> | 0 soid </span>
                                     </div>
-                                    <div class="product-price my-3 ">
+                                    <div class="product-detail">
+                                        <p>
+                                            Item Code: <span class="text-danger">  #a100215</span>
+                                        </p>
+                                        <p>
+                                            Availability: <span class="text-success">In stock</span>
+
+                                        </p>
+                                        <p>
+                                            Category: <span class="text-success">#Iphone</span>
+                                        </p>
+                                    </div>
+                                    <div class="product-price my-3 border-bottom">
                                         <span> {{result.product_price | currency}}</span> <span class="ml-3 "> 10000</span>
                                     </div>
-                                    <div class="product-color my-3 ">
-                                        Color
-                                        <ul>
-                                            <li class="color-red "></li>
-                                            <li class="color-black mx-2 "></li>
-                                            <li class="color-blue "></li>
-                                        </ul>
-
+                                    <div class="d-flex justify-content-start mb-4">
+                                        <div class="color-red"></div>
+                                        <div class="color-black mx-2 "></div>
+                                        <div class="color-blue "></div>
                                     </div>
-                                    <div class="row justify-content-left ">
-                                        <div class="col-4 ">
-                                            <div class="input-group mb-3">
+                                    <div class="ml-0 my-2">
+                                        <div class="form-inline">
+                                            <div class="input-group">
                                                 <div class="input-group-prepend ">
-                                                    <button class="input-group-text " id="basic-addon1" (click)="minus()">-</button>
+                                                    <button class="input-group-text" id="basic-addon1" (click)="minus()">-</button>
                                                 </div>
-                                                <input type="text " class="form-control text-center " value={{this.qty}}>
+                                                <input type="text" class="form-control shadow-none text-center " value={{this.qty}}>
                                                 <div class="input-group-prepend ">
                                                     <button class="input-group-text " id="basic-addon1 " (click)="plus()">+</button>
                                                 </div>
+                                                <button type="button" class="btn  form-control add-cart ml-2">
+                                                    <i class="fa fa-shopping-cart"></i>  ADD TO CART
+                                                </button>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="add-to-cart ">
-                                        <button class="btn btn-warning text-white ">
-                                            <i class="fa fa-shopping-bag " aria-hidden="true "></i> Add to cart
-                                        </button>
-                                        <button class="btn btn-warning text-white mx-2 ">
-                                            Order 
-                                        </button>
-                                    </div>
 
+                                        </div>
+
+                                    </div>
                                     <div class="mt-3 ">
                                         <i class="fa fa-envelope " aria-hidden="true "></i>
                                         <i class="fa fa-heart mx-4 " aria-hidden="true "></i>

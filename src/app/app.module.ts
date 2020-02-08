@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule , Routes} from '@angular/router'
-import { NgxImageZoomModule } from 'ngx-image-zoom';
+// import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgxSpinnerModule } from "ngx-spinner";
+import {ImageZoomModule} from 'angular2-image-zoom';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -53,7 +54,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    NgxImageZoomModule.forRoot(),
+    // NgxImageZoomModule.forRoot(),
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -63,6 +64,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     NgxSpinnerModule,
+    ImageZoomModule,
     BrowserAnimationsModule,
         NoopAnimationsModule,
     

@@ -64,3 +64,39 @@
     min-width: 500px !important;
     min-height: 500px !important;
 }
+
+.btn-left {
+    position: absolute;
+    margin-top: 4.5rem;
+    left: 0;
+}
+
+.btn-right {
+    position: absolute;
+    right: 0;
+    margin-top: 4.5rem;
+    box-shadow: none;
+}
+
+.btn-left-click {
+    box-shadow: none;
+    background-color: transparent;
+    color: #ffff;
+}
+
+.btn-right-click {
+    color: #ffff;
+    box-shadow: none;
+    background-color: transparent;
+    border: transparent;
+}
+
+.btn-left-click:hover {
+    background-color: rgb(237, 153, 8);
+    color: #ffffff;
+}
+
+.btn-right-click:hover {
+    background-color: rgb(237, 153, 8);
+    color: #ffffff;
+}

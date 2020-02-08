@@ -13,12 +13,12 @@ export class ProductDetailComponent implements OnInit {
   constructor(  public activatedRoute : ActivatedRoute ) { 
 
   }
-  public qty=0;
+  public qty=1;
   plus(){
     this.qty= this.qty+1;
   }
   minus(){
-    if(this.qty==0) this.qty=0
+    if(this.qty==1) this.qty=1
     else  this.qty= this.qty - 1;
     
   }

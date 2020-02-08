@@ -109,5 +109,22 @@
 }
 
 .nav-top {
-    margin-top: -15%;
+    margin-top: -20%;
 }
+
+.sub-menu {
+    display: block;
+    position: absolute;
+    background-color: chartreuse;
+    z-index: 999;
+    top: 0;
+    right: 0;
+}
+
+
+/* .sub-menu:hover {
+    display: block;
+    position: absolute;
+    background-color: chartreuse;
+    bottom: 0;
+} */

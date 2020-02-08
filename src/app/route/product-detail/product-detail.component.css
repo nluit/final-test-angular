@@ -56,7 +56,7 @@ li {
 }
 
 .image {
-    cursor: zoom-in !important;
+    cursor: crosshair;
     object-fit: cover;
     object-position: center;
 }
@@ -94,6 +94,50 @@ li {
 .add-cart:hover {
     background-color: rgb(202, 65, 39);
     color: #ffffff;
+    opacity: 1;
+}
+
+.btn-left {
+    position: absolute;
+    margin-top: 1.5rem;
+    left: 0;
+}
+
+.btn-right {
+    position: absolute;
+    right: 0;
+    margin-top: 1.5rem;
+    box-shadow: none;
+}
+
+.btn-left-click {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.btn-right-click {
+    box-shadow: none;
+    background-color: transparent;
+    border: transparent;
+}
+
+.btn-left-click:hover {
+    background-color: rgb(237, 153, 8);
+    color: #ffffff;
+}
+
+.btn-right-click:hover {
+    background-color: rgb(237, 153, 8);
+    color: #ffffff;
+}
+
+.btn-desc {
+    background-color: rgb(237, 153, 8) !important;
+    color: #ffffff !important;
+    opacity: 0.9;
+}
+
+.btn-desc:hover {
     opacity: 1;
 }
 

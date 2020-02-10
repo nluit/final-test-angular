@@ -23,8 +23,16 @@ export class MainContentComponent implements OnInit {
       this.oppo.push(i);
     })
     console.log(this.samsung);
-    // console.log(this.products);
 
+  }
+  runBanner(value:boolean){
+    if(value){
+      document.querySelector('.hot-deal').scrollBy(500,0);
+      console.log(value);
+    }
+    else{
+      document.querySelector('.hot-deal').scrollBy(-500,0);
+    }
   }
 
   

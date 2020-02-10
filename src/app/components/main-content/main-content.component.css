@@ -1,5 +1,7 @@
 .product-image {
     overflow: hidden;
+    object-fit: cover;
+    object-position: center;
 }
 
 .product-image img {
@@ -60,11 +62,6 @@
     font-size: 1.2em;
 }
 
-.card-columns {
-    min-width: 500px !important;
-    min-height: 500px !important;
-}
-
 .btn-left {
     position: absolute;
     margin-top: 4.5rem;
@@ -99,4 +96,38 @@
 .btn-right-click:hover {
     background-color: rgb(237, 153, 8);
     color: #ffffff;
+}
+
+.btn-banner-left {
+    position: absolute;
+    box-shadow: none;
+    background-color: transparent;
+    color: #ffff;
+    left: 0;
+    z-index: 999;
+    margin-top: 50%;
+    border-style: none;
+    color: black;
+    display: none;
+}
+
+.btn-banner-right {
+    position: absolute;
+    box-shadow: none;
+    background-color: transparent;
+    color: #ffff;
+    right: 0;
+    z-index: 999;
+    margin-top: 50%;
+    border-style: none;
+    color: black;
+    display: none;
+}
+
+.position-relative:hover>.btn-banner-right {
+    display: block;
+}
+
+.position-relative:hover>.btn-banner-left {
+    display: block;
 }

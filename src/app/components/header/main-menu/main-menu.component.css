@@ -115,16 +115,15 @@
 .sub-menu {
     display: block;
     position: absolute;
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
     z-index: 999;
     top: 0;
-    right: 0;
+    left: 110%;
+    /* right: -110%; */
+    height: 370px;
+    width: 100%;
+    display: inline-block;
+    border: 25px solid transparent;
+    z-index: 999;
+    border-style: solid;
 }
-
-
-/* .sub-menu:hover {
-    display: block;
-    position: absolute;
-    background-color: chartreuse;
-    bottom: 0;
-} */

@@ -10,7 +10,7 @@ import { list_product } from '../../product-list';
 export class ProductDetailComponent implements OnInit {
   public products = list_product;
   public result =null ;
-  constructor(  public activatedRoute : ActivatedRoute ) { 
+  constructor(  public activatedRoute : ActivatedRoute , ) { 
 
   }
   public qty=1;

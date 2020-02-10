@@ -3,9 +3,9 @@
         BEST SELLER
     </div>
     <div class="position-relative">
-        <div class="d-flex justify-content-start  mb-5 overflow-auto">
-            <div class=" btn-left"><button type="button" class="btn btn-left-click"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button></div>
-            <div class=" btn-right"><button type="button" class="btn btn-right-click"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button></div>
+        <div class="hot-deal d-flex justify-content-start  mb-5 overflow-auto">
+            <div class=" btn-left"><button type="button" class="btn btn-left-click" (click)="runBanner(false)"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button></div>
+            <div class=" btn-right"><button type="button" class="btn btn-right-click" (click)="runBanner(true)"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button></div>
             <img width="250" height="200" class="img-item ml-0 mr-2" src="https://scontent.fdad1-1.fna.fbcdn.net/v/t1.0-9/79258128_135317527904914_32533518273740800_n.png?_nc_cat=100&_nc_ohc=2HEkR05uRV8AX-Xe6Wu&_nc_ht=scontent.fdad1-1.fna&oh=cbab5b947d041e639a9ba4258b4428bc&oe=5ED429FC"
                 alt="">
             <img width="250" height="200" class="img-item mr-2" src="https://scontent-hkg3-2.xx.fbcdn.net/v/t1.0-9/p960x960/79674430_136577011112299_8151269052115845120_o.png?_nc_cat=110&_nc_ohc=BhDWQoGHUKIAX8XqPOj&_nc_ht=scontent-hkg3-2.xx&oh=dfe91391fdbd84a7e9da0ca026ca5376&oe=5ED976BF"
@@ -35,8 +35,6 @@
                 <div class="img-hover-zoom">
                     <img src="https://previews.123rf.com/images/executioner4/executioner41704/executioner4170400047/76923781-fashion-summer-web-banner-sale-banner-design-template-with-a-white-t-shirt-vector-illustration-.jpg" class="img-fluid" alt=" ">
                 </div>
-
-
             </div>
         </div>
         <div class="col-sm-6 ">
@@ -53,100 +51,56 @@
 <div class="container mt-3 ">
     <div class="card-columns ">
         <div class="card carousel slide " id="carouselExampleIndicators6" data-ride="carousel ">
-            <div class="card-header ">
-                <span> <b>SamSung</b>
-                </span>
-                <button class="float-right bg-secondary text-white " href="#carouselExampleIndicators6" role="button " data-slide="prev">
-                    <i class="fa fa-chevron-right " aria-hidden="true "></i>
+            <div class="position-relative">
+                <button class="btn-banner-left" href="#carouselExampleIndicators6" role="button " data-slide="prev">
+                    <i class="fa fa-chevron-left fa-2x" aria-hidden="true "></i>
                 </button>
-                <button class="float-right bg-secondary text-white" href="#carouselExampleIndicators6" role="button " data-slide="next">
-                    <i class="fa fa-chevron-left" aria-hidden="true "></i>
+                <button class="btn-banner-right" href="#carouselExampleIndicators6" role="button " data-slide="next">
+                    <i class="fa fa-chevron-right fa-2x" aria-hidden="true "></i>
                 </button>
-            </div>
-            <div class="carousel-inner ">
-                <div class="carousel-item " *ngFor="let product of samsung let i=index" [ngClass]="{ 'active' : i==0 } ">
-                    <div class="product-image text-center ">
-                        <img class="my-3 " [src]=product.img width="250 " height="250 " alt=" ">
-                    </div>
-                    <div class="card-footer bg-white">
-                        <div class="product-name text-center mb-3 ">
-                            <a href=" " class="product-name "> <span class="card-title "></span > {{product.product_name}} </a>
-                                <br>
-                            </div>
-                            <div class="product-detail ">
-                                <span class="product-price "> {{product.product_price | currency}}</span>
-                                <span> 
-                                    <button class="btn btn-secondary mx-4 ">-29%</button> 
-                                    <button class="btn btn-warning ">Add to Cart</button>
-                                </span>
+                <div class="carousel-inner ">
+                    <div class="carousel-item" *ngFor="let product of samsung let i=index" [ngClass]="{ 'active' : i==0 } ">
+                        <div class="product-image text-center">
+                            <img class="" [src]=product.img width="350" height="355" alt=" ">
                         </div>
-                    </div>
-                </div>
 
+                    </div>
+
+                </div>
             </div>
 
         </div>
-        <div class="card carousel slide " id="carouselExampleIndicators7" data-ride="carousel ">
-            <div class="card-header ">
-                <span> <b>OPPO</b>
-                </span>
-                <button class="float-right bg-secondary text-white " href="#carouselExampleIndicators7" role="button " data-slide="prev">
-                    <i class="fa fa-chevron-right " aria-hidden="true "></i>
+        <div class="card carousel slide" id="carouselExampleIndicators7" data-ride="carousel ">
+            <div class="position-relative">
+                <button class="btn-banner-left" href="#carouselExampleIndicators7" role="button " data-slide="prev">
+                    <i class="fa fa-chevron-left fa-2x" aria-hidden="true "></i>
                 </button>
-                <button class="float-right bg-secondary text-white " href="#carouselExampleIndicators7" role="button " data-slide="next">
-                    <i class="fa fa-chevron-left " aria-hidden="true "></i>
+                <button class="btn-banner-right" href="#carouselExampleIndicators7" role="button " data-slide="next">
+                    <i class="fa fa-chevron-right fa-2x" aria-hidden="true "></i>
                 </button>
-            </div>
-            <div class="carousel-inner ">
-                <div class="carousel-item " *ngFor="let product of oppo let i=index " [ngClass]="{ 'active' : i==0 }">
-                    <div class="product-image text-center ">
-                        <img class="my-3 " [src]=product.img width="250 " height="250" alt=" ">
-                    </div>
-                    <div class="card-footer bg-white ">
-                        <div class="product-name text-center mb-3 ">
-                            <a href=" " class="product-name "> <span class="card-title "></span > {{product.product_price}}</a>
-                                <br>
-                            </div>
-                            <div class="product-detail ">
-                                <span class="product-price ">{{product.product_price | currency }}</span>
-                                <span> 
-                                    <button class="btn btn-secondary mx-4 ">-29%</button> 
-                                    <button class="btn btn-warning ">Add to Cart</button>
-                                </span>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item " *ngFor="let product of oppo let i=index " [ngClass]="{ 'active' : i==0 }">
+                        <div class="product-image text-center ">
+                            <img class="" [src]=product.img width="350 " height="355" alt=" ">
                         </div>
                     </div>
                 </div>
-
             </div>
 
         </div>
-        <div class="card carousel slide " id="carouselExampleIndicators8" data-ride="carousel ">
-            <div class="card-header ">
-                <span> <b>IPHONE</b>
-                </span>
-                <button class="float-right bg-secondary text-white" href="#carouselExampleIndicators8" role="button " data-slide="prev">
-                    <i class="fa fa-chevron-right " aria-hidden="true "></i>
+        <div class="card carousel slide" id="carouselExampleIndicators8" data-ride="carousel ">
+            <div class="position-relative">
+                <button class="btn-banner-left" href="#carouselExampleIndicators8" role="button " data-slide="prev">
+                    <i class="fa fa-chevron-left fa-2x" aria-hidden="true "></i>
                 </button>
-                <button class="float-right bg-secondary text-white " href="#carouselExampleIndicators8" role="button " data-slide="next">
-                    <i class="fa fa-chevron-left " aria-hidden="true "></i>
+                <button class="btn-banner-right" href="#carouselExampleIndicators8" role="button " data-slide="next">
+                    <i class="fa fa-chevron-right fa-2x" aria-hidden="true "></i>
                 </button>
-            </div>
-            <div class="carousel-inner ">
-                <div class="carousel-item " *ngFor="let product of iphone let i=index" [ngClass]="{ 'active' : i==0 }">
-                    <div class="product-image text-center ">
-                        <img class="my-3 " [src]=product.img width="250 " height="250" alt=" ">
-                    </div>
-                    <div class="card-footer bg-white ">
-                        <div class="product-name text-center mb-3 ">
-                            <a href=" " class="product-name "> <span class="card-title "></span > {{product.product_name}} </a>
-                                <br>
-                            </div>
-                            <div class="product-detail text-center ">
-                                <span class="product-price ">{{product.product_price | currency}} </span>
-                                <span> 
-                                    <button class="btn btn-secondary mx-4 ">-29%</button> 
-                                    <button class="btn btn-warning ">Add to Cart</button>
-                                </span>
+                <div class="carousel-inner">
+                    <div class="carousel-item " *ngFor="let product of iphone let i=index" [ngClass]="{ 'active' : i==0 }">
+                        <div class="product-image text-center">
+                            <img class="responsive" [src]=product.img width="350" height="355" alt=" ">
                         </div>
                     </div>
                 </div>

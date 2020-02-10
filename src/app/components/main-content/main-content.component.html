@@ -59,7 +59,10 @@
                     <i class="fa fa-chevron-right fa-2x" aria-hidden="true "></i>
                 </button>
                 <div class="carousel-inner ">
+                    <span class="badge badge-pill badge-danger position-absolute">Top Views</span>
+
                     <div class="carousel-item" *ngFor="let product of samsung let i=index" [ngClass]="{ 'active' : i==0 } ">
+
                         <div class="product-image text-center">
                             <img class="" [src]=product.img width="350" height="355" alt=" ">
                         </div>
@@ -68,7 +71,6 @@
 
                 </div>
             </div>
-
         </div>
         <div class="card carousel slide" id="carouselExampleIndicators7" data-ride="carousel ">
             <div class="position-relative">
@@ -80,7 +82,9 @@
                 </button>
 
                 <div class="carousel-inner">
-                    <div class="carousel-item " *ngFor="let product of oppo let i=index " [ngClass]="{ 'active' : i==0 }">
+                    <span class="badge badge-pill badge-danger position-absolute">New</span>
+
+                    <div class="carousel-item" *ngFor="let product of oppo let i=index " [ngClass]="{ 'active' : i==0 }">
                         <div class="product-image text-center ">
                             <img class="" [src]=product.img width="350 " height="355" alt=" ">
                         </div>
@@ -89,7 +93,7 @@
             </div>
 
         </div>
-        <div class="card carousel slide" id="carouselExampleIndicators8" data-ride="carousel ">
+        <div class="card carousel slide" id="carouselExampleIndicators8" data-ride="carousel">
             <div class="position-relative">
                 <button class="btn-banner-left" href="#carouselExampleIndicators8" role="button " data-slide="prev">
                     <i class="fa fa-chevron-left fa-2x" aria-hidden="true "></i>
@@ -98,6 +102,8 @@
                     <i class="fa fa-chevron-right fa-2x" aria-hidden="true "></i>
                 </button>
                 <div class="carousel-inner">
+                    <span class="badge badge-pill badge-primary position-absolute">Sale</span>
+
                     <div class="carousel-item " *ngFor="let product of iphone let i=index" [ngClass]="{ 'active' : i==0 }">
                         <div class="product-image text-center">
                             <img class="responsive" [src]=product.img width="350" height="355" alt=" ">

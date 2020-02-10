@@ -131,3 +131,7 @@
 .position-relative:hover>.btn-banner-left {
     display: block;
 }
+
+.badge-pill {
+    z-index: 999;
+}

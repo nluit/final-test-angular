@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { list_product} from '../../product-list'
+import {DataService } from '../../services/data.service';
+import { from, zip, range ,of , merge , Observable} from 'rxjs';
+import {filter,map, mergeMap, take, toArray, reduce , tap , mergeAll , skip} from 'rxjs/operators';
 
 @Component({
   selector: 'app-main-content',
@@ -8,21 +11,25 @@ import { list_product} from '../../product-list'
 })
 export class MainContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataservice : DataService ) { }
+  public sale_product = null ;
   samsung =[];
-  iphone =[];
-  oppo =[];
+ 
   public products = list_product;
+  public new_product = null;
   ngOnInit() {
     this.products.map(i=>{
       if(i.category=="Samsung")
       this.samsung.push(i);
-      if(i.category=="iphone")
-      this.iphone.push(i);
-      if(i.category=="oppo")
-      this.oppo.push(i);
+      
     })
-    console.log(this.samsung);
+    // console.log(this.samsung);
+    this.dataservice.getNewProduct().subscribe(val => 
+    {      
+        this.new_product = val;
+    });
+    this.dataservice.getDiscountProduct().subscribe(val => this.sale_product = val)
+
 
   }
   runBanner(value:boolean){

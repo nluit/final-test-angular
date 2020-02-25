@@ -7,57 +7,15 @@
                 </button>
                 <div class="collapse " id="collapseExample">
                     <div class="bg-light p-5 position-relative" id="_navigation">
-        <ul >
-            <li>
-            <a  class="nav-top"><span>Iphone</span></a>
-
-        </li>
-        <li>
+        <ul >          
+        <li *ngFor=" let cate of category ">
             <a>
-
-                <span>SamSung</span>
+                <span>{{cate?.cate_name}}</span>
             </a>
         </li>
-        <li>
-            <a>
-
-                <span>Vivo</span>
-            </a>
-        </li>
-        <li>
-            <a>
-
-                <span>Huawei</span>
-            </a>
-        </li>
-        <li>
-            <a>
-
-                <span>Oppo</span>
-            </a>
-        </li>
-        <li>
-            <a>
-
-                <span>Xiaomi</span>
-            </a>
-        </li>
-
     </ul>
-    <div class="sub-menu bg-light">
-
-    </div>
-
-
-
-
 </div>
-
-
-
 </div>
-
-
 </a>
 
 </li>
@@ -72,8 +30,8 @@
     <a class="nav-link" routerLink="/contact"> {{ 'Contact' | translate }}</a>
 </li>
 
-<li class="nav-item px-2 shadow-none" routerLinkActive="active text-white">
-    <a class="nav-link" routerLink="login">{{ 'Login' | translate }} </a>
+<li class="nav-item px-2 shadow-none" routerLinkActive="active text-white" *ngIf="checklogin == 0 ">
+    <a class="nav-link" routerLink="login"> {{ 'Login' | translate }} </a>
 </li>
 </ul>
 </div>

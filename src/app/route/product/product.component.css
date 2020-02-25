@@ -124,3 +124,9 @@ a {
     text-decoration: none;
     color: rgb(33, 37, 41);
 }
+
+.btn-add {
+    border: 1px solid transparent;
+    background-color: transparent;
+    outline: transparent;
+}

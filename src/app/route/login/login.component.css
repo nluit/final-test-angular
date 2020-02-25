@@ -1,0 +1,26 @@
+.title {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.title:after {
+    display: inline-block;
+    margin: 0 0 8px 8px;
+    height: 1px;
+    content: " ";
+    text-shadow: none;
+    background-color: #999;
+    width: 140px;
+}
+
+.title:before {
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    height: 1px;
+    content: " ";
+    text-shadow: none;
+    background-color: #999;
+    width: 140px;
+}

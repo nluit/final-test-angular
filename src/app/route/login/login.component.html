@@ -1,18 +1,31 @@
 <div class="container my-5">
-    <div class="row my-5">
+    <div class="row my-5" [formGroup]="form">
         <div class="col-md-7 text-center">
             <img src="https://raw.githubusercontent.com/nluit/task10/master/src/assets/bg-login.jpg" class="thumbnail" width="100%" alt="">
         </div>
         <div class="col-md-5">
             <h3 class="text-center"> LOGIN </h3>
-
+            <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="code === 201">
+                <button type="button" class="close" data-dismiss="alert" (click)="redirect()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <strong>Đăng nhập thành công </strong>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="code === 401">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <strong>Đăng nhập thất bại !</strong>
+            </div>
             <div class="form-group">
                 <label for=""></label>
                 <div class="input-group mb-3 ">
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-white border border-white" id="basic-addon1"><i class="fa fa-user fa-2x text-secondary" aria-hidden="true"></i> </span>
                     </div>
-                    <input type="text" class="shadow-none form-control border border-dark border-left-0 border-top-0 border-right-0" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="shadow-none form-control border border-dark border-left-0 border-top-0 border-right-0" [ngClass]="{'is-invalid':form.get('username').invalid  &&  form.get('username').touched  }" formControlName="username" placeholder="Username">
                     <small id="helpId" class="form-text text-muted"></small>
 
                 </div>
@@ -24,7 +37,8 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-white border border-white" id="basic-addon1"><i class="fa fa-lock fa-2x text-secondary" aria-hidden="true"></i> </span>
                     </div>
-                    <input type="password" class="shadow-none form-control  border border-dark border-left-0 border-top-0 border-right-0" name="" id="" placeholder="Password">
+                    <input type="password" class="shadow-none form-control  border border-dark border-left-0 border-top-0 border-right-0" [ngClass]="{'is-invalid':form.get('password').invalid  &&  form.get('password').touched  }" formControlName="password" name="" id=""
+                        placeholder="Password">
                     <small id="helpId" class="form-text text-muted"></small>
 
                 </div>
@@ -33,9 +47,9 @@
                 <span> Don't have a account ? <a routerLink="/sign-up" > Sign up</a> </span>
             </div>
             <div class="form-group mt-4">
-                <input type="button" class="btn btn-success form-control" value="Login">
+                <input type="button" class="btn btn-success form-control" (click)="submit()" [disabled]="!form.valid" value="Login">
             </div>
-            <h4 class="text-center">Or</h4>
+            <h4 class="text-center title">Or</h4>
             <div class="form-group mt-4 text-center">
                 <button class="btn btn-primary mx-2 "><i class="fa fa-facebook" aria-hidden="true"></i>  Facebook</button>
                 <button class="btn btn-danger mx-2"><i class="fa fa-google-plus" aria-hidden="true"></i> Google</button>

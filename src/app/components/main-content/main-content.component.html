@@ -1,27 +1,16 @@
 <div class="container mt-3">
     <div class="card-header">
-        BEST SELLER
+        NEW PRODUCT
     </div>
     <div class="position-relative">
-        <div class="hot-deal d-flex justify-content-start  mb-5 overflow-auto">
+        <div class="hot-deal d-flex justify-content-start  mb-5 " style="overflow-x: scroll;">
             <div class=" btn-left"><button type="button" class="btn btn-left-click" (click)="runBanner(false)"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button></div>
             <div class=" btn-right"><button type="button" class="btn btn-right-click" (click)="runBanner(true)"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button></div>
-            <img width="250" height="200" class="img-item ml-0 mr-2" src="https://scontent.fdad1-1.fna.fbcdn.net/v/t1.0-9/79258128_135317527904914_32533518273740800_n.png?_nc_cat=100&_nc_ohc=2HEkR05uRV8AX-Xe6Wu&_nc_ht=scontent.fdad1-1.fna&oh=cbab5b947d041e639a9ba4258b4428bc&oe=5ED429FC"
-                alt="">
-            <img width="250" height="200" class="img-item mr-2" src="https://scontent-hkg3-2.xx.fbcdn.net/v/t1.0-9/p960x960/79674430_136577011112299_8151269052115845120_o.png?_nc_cat=110&_nc_ohc=BhDWQoGHUKIAX8XqPOj&_nc_ht=scontent-hkg3-2.xx&oh=dfe91391fdbd84a7e9da0ca026ca5376&oe=5ED976BF"
-                alt="">
-            <img width="250" height="200" class="img-item mr-2" src="https://scontent.fdad1-1.fna.fbcdn.net/v/t1.0-9/78644011_134295454673788_1718199630950301696_n.png?_nc_cat=100&_nc_ohc=pHe0TxoBdcwAX8LQHLE&_nc_ht=scontent.fdad1-1.fna&oh=96269f5a1e46bd4134d78d58467c8720&oe=5ED9E4D9"
-                alt="">
-            <img width="250" height="200" class="img-item mr-2" src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-9/78297135_133231681446832_1467375482189119488_o.jpg?_nc_cat=109&_nc_ohc=lFDfvOY36cYAX93yVaw&_nc_ht=scontent.fdad2-1.fna&oh=e277364d5742c4d91315afec9587db43&oe=5ECDDD9E"
-                alt="">
-            <img width="250" height="200" class="img-item mr-2" src="https://scontent.fdad1-1.fna.fbcdn.net/v/t1.0-9/p960x960/76759993_126124348824232_6098198801145659392_o.jpg?_nc_cat=100&_nc_ohc=5vAJi-G0UKgAX8Jw_f3&_nc_ht=scontent.fdad1-1.fna&_nc_tp=6&oh=56ffcbac46bcc95f71fd40e11cfe4c8c&oe=5EB8DBF7"
-                alt="">
-            <img width="250" height="200" class="img-item mr-2" src="https://scontent-hkg3-2.xx.fbcdn.net/v/t1.0-9/p960x960/70548359_126122705491063_8209479014461472768_o.jpg?_nc_cat=110&_nc_ohc=UoLK4qB53FQAX8YcaIY&_nc_ht=scontent-hkg3-2.xx&_nc_tp=6&oh=37621fceb705ac8adf4cdf346a06c77b&oe=5ED0BA2E"
-                alt="">
-            <img width="250" height="200" class="img-item mr-2" src="https://scontent-hkg3-1.xx.fbcdn.net/v/t1.0-9/74435908_124311029005564_4861883613064462336_n.png?_nc_cat=104&_nc_ohc=EXjDt19X8sIAX9OMSad&_nc_ht=scontent-hkg3-1.xx&oh=9022b91d2470eb7110fd26af13b776e4&oe=5ED54934"
-                alt="">
-            <img width="250" height="200" class="img-item" src="https://scontent.fdad1-1.fna.fbcdn.net/v/t1.0-9/69987279_118120672957933_8748552961216479232_n.jpg?_nc_cat=104&_nc_ohc=aaw3hJkIvXcAX8BuQJB&_nc_ht=scontent.fdad1-1.fna&oh=b96d0739c998561067edefb6b34ef4cd&oe=5ECEA0E0"
-                alt="">
+
+            <div class="d-flex justify-content-start ">
+                <img class="ml-0 mr-2" style="width:250px; height: 200px;" src={{product?.img}} alt="{{product?.product_name}}" *ngFor="let product of new_product ">
+            </div>
+
         </div>
     </div>
 </div>
@@ -84,7 +73,7 @@
                 <div class="carousel-inner">
                     <span class="badge badge-pill badge-danger position-absolute">New</span>
 
-                    <div class="carousel-item" *ngFor="let product of oppo let i=index " [ngClass]="{ 'active' : i==0 }">
+                    <div class="carousel-item" *ngFor="let product of new_product let i=index " [ngClass]="{ 'active' : i==0 }">
                         <div class="product-image text-center ">
                             <img class="" [src]=product.img width="350 " height="355" alt=" ">
                         </div>
@@ -104,7 +93,7 @@
                 <div class="carousel-inner">
                     <span class="badge badge-pill badge-primary position-absolute">Sale</span>
 
-                    <div class="carousel-item " *ngFor="let product of iphone let i=index" [ngClass]="{ 'active' : i==0 }">
+                    <div class="carousel-item " *ngFor="let product of sale_product let i=index" [ngClass]="{ 'active' : i==0 }">
                         <div class="product-image text-center">
                             <img class="responsive" [src]=product.img width="350" height="355" alt=" ">
                         </div>

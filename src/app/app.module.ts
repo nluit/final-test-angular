@@ -1,15 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule , Routes} from '@angular/router'
-import { NgxImageZoomModule } from 'ngx-image-zoom';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient  , HTTP_INTERCEPTORS} from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { NgxSpinnerModule } from "ngx-spinner";
-import {ImageZoomModule} from 'angular2-image-zoom';
-
+// import { NgxSpinnerModule } from "ngx-spinner";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+// import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,8 +26,10 @@ import { ProductComponent } from './route/product/product.component';
 import {appRoutes} from './app.routes';
 import { ProductDetailComponent } from './route/product-detail/product-detail.component';
 import { RegisterComponent } from './route/register/register.component';
-
-
+import { DataService } from './services/data.service';
+import {AuthService} from './services/auth.service';
+import { AuthInterceptor } from  './services/authconfig';
+import { UserComponent } from './route/user/user.component'
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -49,13 +49,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     LoginComponent,
     ProductComponent,
     ProductDetailComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    NgxImageZoomModule.forRoot(),
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -64,13 +64,18 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    NgxSpinnerModule,
-    ImageZoomModule,
-    BrowserAnimationsModule,
-        NoopAnimationsModule,
+    FormsModule,      
+    ReactiveFormsModule,
+    // NgxSpinnerModule,
+    // BrowserAnimationsModule,
+        // NoopAnimationsModule,
     
   ],
-  providers: [],
+  providers: [DataService  , AuthService , {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }] ,
   bootstrap: [AppComponent]
 })
 export class AppModule { }

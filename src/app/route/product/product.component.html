@@ -1,31 +1,67 @@
 <div class="container">
-    <ngx-spinner type="ball-pulse-sync"></ngx-spinner>
+    <!-- <ngx-spinner type="ball-pulse-sync"></ngx-spinner> -->
     <div class="card-header mt-5 bg-white border-white">
-        <span>SHOP</span>
 
-        <div class="float-right ml-n5">
-            <i class="fa fa-table" aria-hidden="true"></i>
+        <div class="d-flex">
+            <div class="mr-auto p-2">
+                <span> <h2>SHOP</h2> </span>
+            </div>
+            <div class="p-2">
+                <div class="d-flex justify-content-end">
+                    <div>
+                        <label for="">Category  <i class="fa fa-sort"></i></label>
+                        <select (change)="selectCategory($event)" class="px-1 py-1 bg-white">
+                            <option value="0">Chọn</option>
+                            <option value="{{cate?.id}}" *ngFor="let cate of category" >{{cate?.cate_name}} </option>
+                            
+                        </select>
+                    </div>
+                    <div class="mx-5">
+                        <label for="">Price <i class="fa fa-sort"></i></label>
+                        <select name="" class="px-1 py-1 bg-white" (change)="selectChangeHandler($event)" id="">
+                            <option value="0">Chọn</option>
+                            <option value="1">Increase</option>
+                            <option value="2">Descrease
+                            </option>
+                            
+                        </select>
+                    </div>
+                    <div>
+                        <label for="">Show<i class="fa fa-sort"></i></label>
+                        <select name="" class="px-1 py-1 bg-white mx-3" id="">
+                            <option value="">12</option>
+                            <option value="">9</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="float-right ml-n5">
+                    <i class="fa fa-table" aria-hidden="true"></i>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row mt-n5">
         <div class="col-md-3 col-sm-6 col-xs-12 mt-4" *ngFor="let product of products index as i">
             <div class="card-body  product-item boder-white">
                 <div class="card product-thumb border border-white">
-                    <!-- <div class="rounded-circle bg-warning img text-center float-left mt-4 ml-2">
-                        <span> 13 %</span>
-                    </div> -->
+                    <span class="badge badge-pill badge-primary position-absolute" *ngIf="product?.discount !=0 ">-{{product?.discount}}%</span>
                     <div class="img-hover-zoom--zoom-n-rotate">
-                        <a routerLink="/product/{{product.product_id}}">
-                            <img class="card-img-top" [src]=product.img width="180" height="180" alt="">
+                        <a routerLink="/product/{{product?.id}}">
+                            <img class="card-img-top" [src]=product?.img width="180" height="180" alt="">
                         </a>
                     </div>
                     <div class="card-footer product-info">
-                        <div class="add-to-cart text-center bg-warning ">
-                            <button class="btn text-white"><i class="fa fa-shopping-basket text-white" aria-hidden="true"></i> Add to cart</button>
+                        <div class="add-to-cart text-center bg-warning">
+                            <button class=" text-white btn-add" (click)="addTocart(product)"><i class="fa fa-shopping-basket text-white" aria-hidden="true"></i> Add to cart</button>
                         </div>
-                        <div class=""><a routerLink="/product/{{product.product_id}}" class="product-name">{{product.product_name |uppercase}}</a> </div>
+                        <div class=""><a routerLink="/product/{{product?.id}}" class="product-name">{{product?.product_name |uppercase}}</a> </div>
                         <div class="product-price">
-                            <span class="price"> {{product.product_price | currency}}</span> <span class="sale ml-3">1000</span>
+                            <span class="price" *ngIf="product?.discount !=0 "> {{(product?.product_price)- (product?.product_price)*(product?.discount/100) | currency:"VND":"symbol"}}</span>
+                            <span class="price" *ngIf="product?.discount ==0 "> {{(product?.product_price) | currency:"VND":"symbol"}}</span>
+                            <span class="sale ml-3" *ngIf="product?.discount !=0 ">{{product?.product_price | currency:"VND":"symbol"}}</span>
+
                         </div>
                         <div class="star text-warning ">
                             <i class="fa fa-star" aria-hidden="true"></i>
@@ -46,10 +82,6 @@
     <nav aria-label="Page navigation example  bg-white my-5">
 
         <ul class="pagination justify-content-end ">
-            <label for="" class="pt-2">Show</label><select name="" class="mx-3" id="">
-                <option value="">12</option>
-                <option value="">9</option>
-            </select>
             <li class="page-item">
                 <a class="page-link border-white" href="#" tabindex="-1">&lsaquo;&lsaquo;</a>
             </li>

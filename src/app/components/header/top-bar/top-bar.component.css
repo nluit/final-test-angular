@@ -35,3 +35,58 @@
 .dropdown-menu {
     margin: 0.4rem -3rem 0;
 }
+
+.shoping-list {
+    height: 400px;
+    width: 300px;
+    z-index: 999;
+    right: 0;
+    display: none;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+.nav-item:hover>.shoping-list {
+    display: block;
+}
+
+.shoping-list>ul>div>li {
+    list-style: none;
+}
+
+.logout {
+    cursor: pointer;
+}
+
+.user {
+    height: 150px;
+    width: 200px;
+    z-index: 999;
+    right: 0;
+    display: none;
+}
+
+.nav-item:hover>.user {
+    display: block;
+}
+
+.user>ul>li {
+    list-style: none;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.nav-link a {
+    color: lightgray;
+    text-decoration: none;
+}
+
+.nav-link:hover>a {
+    color: rgb(238, 153, 8);
+}
+
+.fa-trash {
+    cursor: pointer;
+}

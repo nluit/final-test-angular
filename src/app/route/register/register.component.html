@@ -3,16 +3,15 @@
         <div class="col-md-7 text-center">
             <img src="https://raw.githubusercontent.com/nluit/task10/master/src/assets/bg-login.jpg" class="thumbnail" width="100%" alt="">
         </div>
-        <div class="col-md-5">
-            <h1 class="text-center"> SIGN UP </h1>
-
+        <div class="col-md-5" [formGroup]="form">
+            <h3 class="text-center"> SIGN UP </h3>
             <div class="form-group">
                 <label for=""></label>
                 <div class="input-group mb-3 border border-dark border-left-0 border-top-0 border-right-0">
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-white border border-white" id="basic-addon1"><i class="fa fa-user" aria-hidden="true"></i> </span>
                     </div>
-                    <input type="text" class="shadow-none form-control border border-white" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="shadow-none form-control border border-white" placeholder="Username" [ngClass]="{'is-invalid':form.get('username').invalid  &&  form.get('username').touched  }" formControlName="username">
                     <small id="helpId" class="form-text text-muted"></small>
 
                 </div>
@@ -23,7 +22,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-white border border-white" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i> </span>
                     </div>
-                    <input type="text" class="shadow-none form-control border border-white" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="shadow-none form-control border border-white" placeholder="Email" [ngClass]="{'is-invalid':form.get('email').invalid  &&  form.get('email').touched  }" formControlName="email">
                     <small id="helpId" class="form-text text-muted"></small>
 
                 </div>
@@ -34,7 +33,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-white border border-white" id="basic-addon1"><i class="fa fa-lock" aria-hidden="true"></i> </span>
                     </div>
-                    <input type="password" class="shadow-none form-control  border border-white" name="" id="" placeholder="Password">
+                    <input type="password" class="shadow-none form-control  border border-white" name="" id="" placeholder="Password" [ngClass]="{'is-invalid':form.get('password').invalid  &&  form.get('password').touched  }" formControlName="password">
                     <small id="helpId" class="form-text text-muted"></small>
                 </div>
             </div>
@@ -42,14 +41,26 @@
                 <label for=""></label>
                 <div class="input-group mb-3 border border-dark border-left-0 border-top-0 border-right-0">
                     <div class="input-group-prepend">
-                        <span class="input-group-text bg-white border border-white" id="basic-addon1"><i class="fa fa-lock" aria-hidden="true"></i> </span>
+                        <span class="input-group-text bg-white border border-white" id="basic-addon1">
+                            <i class="fa fa-calendar" aria-hidden="true"></i> </span>
                     </div>
-                    <input type="password" class="shadow-none form-control  border border-white" name="" id="" placeholder="Confirm Password">
+                    <input type="date" class="shadow-none form-control  border border-white" name="" id="" [ngClass]="{'is-invalid':form.get('date_of_birth').invalid  &&  form.get('date_of_birth').touched  }" formControlName="date_of_birth">
+                    <small id="helpId" class="form-text text-muted"></small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for=""></label>
+                <div class="input-group mb-3 border border-dark border-left-0 border-top-0 border-right-0">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white border border-white" id="basic-addon1">
+                            <i class="fa fa-phone" aria-hidden="true"></i> </span>
+                    </div>
+                    <input type="text" class="shadow-none form-control  border border-white" name="phone" id="" [ngClass]="{'is-invalid':form.get('phone').invalid  &&  form.get('phone').touched  }" formControlName="phone" placeholder="Phone number ">
                     <small id="helpId" class="form-text text-muted"></small>
                 </div>
             </div>
             <div class="form-group mt-4">
-                <input type="button" class="btn btn-success form-control" value="Sign Up">
+                <input type="button" class="btn btn-success form-control" (click)="submit()" [disabled]="!form.valid" value="Sign Up">
             </div>
         </div>
     </div>

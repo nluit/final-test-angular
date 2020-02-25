@@ -1,0 +1,60 @@
+<div class="container my-5">
+    <div class="row my-5">
+        <div class="col-md-6 text-center">
+            <img src="https://raw.githubusercontent.com/nluit/task10/master/src/assets/bg-login.jpg" class="thumbnail" width="100%" alt="">
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center"> USER INFOMATION </h3>
+
+            <div class="form-group">
+                <label for=""></label>
+                <div class="input-group mb-3 ">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white border border-white text-secondary" id="basic-addon1"><i class="fa fa-user fa-2x text-secondary" aria-hidden="true"></i> </span>
+                    </div>
+                    <br>
+                    <input type="text" value="{{result?.usename}}" readonly class="bg-white text-secondary shadow-none form-control border border-dark border-left-0 border-top-0 border-right-0">
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for=""></label>
+                <div class="input-group mb-3 ">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white border border-white" id="basic-addon1"><i class="fa fa-lock fa-2x text-secondary" aria-hidden="true"></i> </span>
+                    </div>
+                    <input type="email" value="{{result?.email}}" readonly class="bg-white shadow-none form-control  border border-dark border-left-0 border-top-0 border-right-0">
+                    <small id="helpId" class="form-text text-muted"></small>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for=""></label>
+                <div class="input-group mb-3 ">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-white border border-white" id="basic-addon1"><i class="fa fa-calendar fa-2x text-secondary" aria-hidden="true"></i> </span>
+                    </div>
+                    <input type="text" value="{{result?.date_of_birth | date: 'dd-MM-yyyy'}} " readonly class="bg-white shadow-none form-control border border-dark border-left-0 border-top-0 border-right-0 ">
+                    <small id="helpId " class="form-text text-muted "></small>
+
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for=" "></label>
+                <div class="input-group mb-3 ">
+                    <div class="input-group-prepend ">
+                        <span class="input-group-text bg-white border border-white " id="basic-addon1 "><i class="fa fa-phone fa-2x text-secondary " aria-hidden="true "></i> </span>
+                    </div>
+                    <input type="text " value="{{result?.phone}} " value="PHONE NUMBER " readonly class="bg-white shadow-none form-control bg-white border border-dark border-left-0 border-top-0 border-right-0 ">
+                    <small id="helpId " class="form-text text-muted "></small>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</div>

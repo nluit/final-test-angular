@@ -1,5 +1,6 @@
  
 import { RouterModule , Routes} from '@angular/router'
+import { AuthGuard } from "./services/authe.guard";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,17 +17,19 @@ import { LoginComponent } from './route/login/login.component';
 import { ProductComponent } from './route/product/product.component';
 import { ProductDetailComponent } from './route/product-detail/product-detail.component';
 import { RegisterComponent } from './route/register/register.component';
+import { UserComponent } from './route/user/user.component'
+
 
 export const appRoutes : Routes = [
     {
       path : 'home',
       component : HomeComponent
     },
-    {
-      path : '',
-      redirectTo :'/home',
-      pathMatch : 'full'
-    },
+    // {
+    //   path : '',
+    //   redirectTo :'/home',
+    //   pathMatch : 'full'
+    // },
     {
         path : 'contact',
         component : ContactComponent
@@ -37,25 +40,40 @@ export const appRoutes : Routes = [
       },
       {
         path : 'product',
-      //   component : ProductComponent,
-        children : [
-          {
-              path : '',
-              redirectTo :'/product/list',
-              pathMatch : 'full'
-          },
-          {
-              path : 'list',
-              component : ProductComponent
-          },
-          {
-              path : ':id',
-              component : ProductDetailComponent
-          },
-        ]
+        component : ProductComponent,
+        // children : [
+        //   {
+        //       path : '',
+        //       redirectTo :'/product/list',
+        //       pathMatch : 'full'
+        //   },
+        //   {
+        //       path : 'list',
+        //       component : ProductComponent
+        //   },
+        //   {
+        //       path : ':id',
+        //       component : ProductDetailComponent,
+        //       canActivate: [AuthGuard]
+        //   },
+        // ]
+      },
+      {
+              path : 'product/:id',
+              component : ProductDetailComponent,
       },
       {
         path : 'sign-up',
         component : RegisterComponent
       },
+      {
+        path : 'user',
+        component : UserComponent,
+        canActivate: [AuthGuard]
+
+      },
+      {
+        path :'**',
+        component :HomeComponent
+      }
 ]
